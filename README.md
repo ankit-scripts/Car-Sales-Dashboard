@@ -808,3 +808,48 @@ This visualization module demonstrates the implementation of:
 
 ---
 
+# 🎛️ Dashboard Filters (Slicers)
+
+## 📌 Objective
+
+To improve dashboard interactivity and provide a better user experience, slicers have been added to enable users to dynamically filter the report based on different vehicle attributes. These slicers update all KPIs and visualizations in real time.
+
+---
+
+## Slicers Used
+
+The dashboard includes the following **4 dropdown slicers**:
+
+- 🚗 Body Style
+- 🏪 Dealer Name
+- ⚙️ Transmission
+- 🔧 Engine
+
+---
+
+## Slicer Configuration
+
+For each slicer:
+
+1. Insert a **Slicer** visual.
+2. Drag the required field into the slicer.
+3. Navigate to:
+
+   **Visual → Slicer Settings → Style → Dropdown**
+
+4. Convert the slicer from **List** to **Dropdown** for a cleaner and more compact dashboard layout.
+
+---
+
+## Formatting
+
+Apply consistent formatting across all slicers to maintain a professional dashboard appearance.
+
+- Apply a consistent color theme.
+- Adjust text alignment for better readability.
+- Customize the background color.
+- Format the title and border.
+- Ensure all slicers have a uniform size and spacing.
+- Position slicers vertically for easy navigation and filtering.
+
+---
