@@ -545,3 +545,266 @@ This KPI demonstrates the implementation of:
 
 ---
 
+# 📈 Problem Statement 2: Dashboard Visualizations
+
+## 📌 Problem Statement
+
+The objective of this section is to build interactive visualizations that transform raw sales data into meaningful business insights. These charts enable stakeholders to monitor sales trends, compare product performance, analyze regional sales, and evaluate company-wise performance through an intuitive and interactive dashboard.
+
+### Dashboard Requirements
+
+The dashboard includes the following visualizations:
+
+1. 📈 YTD Sales Weekly Trend
+2. 🚘 YTD Total Sales by Body Style
+3. 🎨 YTD Total Sales by Color
+4. 🌍 YTD Cars Sold by Dealer Region
+5. 🏢 Company-Wise Sales Trend
+
+---
+
+# 📊 Chart 1: YTD Sales Weekly Trend
+
+## Objective
+
+Visualize the **weekly sales trend** throughout the year to identify sales patterns, seasonal fluctuations, and peak-performing weeks.
+
+### Visualization
+
+- **Chart Type:** Area Chart
+
+### Fields Used
+
+| Field | Value |
+|--------|-------|
+| X-Axis | Week |
+| Y-Axis | Total Sales |
+
+---
+
+## Apply Year Filter
+
+To display sales for a specific year:
+
+- Add **Year** to the **Visual Filter** pane.
+- Select **Basic Filtering**.
+- Choose **2023**.
+
+This ensures the chart displays only **Year-to-Date (YTD)** sales for the selected year.
+
+---
+
+## Create Total Sales Measure
+
+Before highlighting the highest sales point, create the following measure:
+
+```DAX
+Total Sales =
+SUM(car_data[Price ($)])
+```
+
+---
+
+## Highlight Maximum Sales Point
+
+Create a measure to identify the highest weekly sales value.
+
+```DAX
+Max Point =
+IF(
+    MAXX(
+        ALLSELECTED('Calendar Table'[Week]),
+        [Total Sales]
+    ) = [Total Sales],
+    MAXX(
+        ALLSELECTED('Calendar Table'[Week]),
+        [Total Sales]
+    ),
+    BLANK()
+)
+```
+
+Add this measure to the **Data Labels** field to automatically highlight the week with the highest sales.
+
+---
+
+## Formatting
+
+- Set the **X-Axis Maximum** to **54** (maximum number of weeks in a year).
+- Remove gridlines for a cleaner appearance.
+- Apply professional color formatting.
+- Enable data labels for the **Maximum Sales Point**.
+
+---
+
+# 🍩 Chart 2: YTD Total Sales by Body Style
+
+## Objective
+
+Analyze the contribution of each **vehicle body style** to the total Year-to-Date sales.
+
+### Visualization
+
+- **Chart Type:** Donut Chart
+
+### Fields Used
+
+| Field | Value |
+|--------|-------|
+| Legend | Body Style |
+| Values | YTD Total Sales |
+
+---
+
+## Formatting
+
+- Apply an attractive color palette.
+- Display percentage and value labels.
+- Customize legend placement.
+- Adjust donut size for improved readability.
+
+---
+
+# 📊 Chart 3: YTD Total Sales by Color
+
+## Objective
+
+Compare Year-to-Date sales across different vehicle colors.
+
+### Visualization
+
+- **Chart Type:** Stacked Column Chart
+
+### Fields Used
+
+| Field | Value |
+|--------|-------|
+| X-Axis | Color |
+| Values | YTD Total Sales |
+
+> **Note:** The X-Axis should contain the **Color** field to compare sales across vehicle colors.
+
+---
+
+## Formatting
+
+- Apply custom colors.
+- Enable data labels.
+- Remove unnecessary gridlines.
+- Adjust column spacing for better visibility.
+
+---
+
+# 🌍 Chart 4: YTD Cars Sold by Dealer Region
+
+## Objective
+
+Visualize the geographical distribution of vehicle sales across different dealer regions.
+
+### Visualization
+
+- **Chart Type:** Map
+
+### Fields Used
+
+| Field | Value |
+|--------|-------|
+| Legend | Dealer Region |
+| Bubble Size | YTD Cars Sold |
+
+---
+
+## Formatting
+
+- Adjust bubble size for better visibility.
+- Apply suitable colors for dealer regions.
+- Improve map readability using built-in formatting options.
+
+---
+
+# 📋 Chart 5: Company-Wise Sales Trend
+
+## Objective
+
+Provide a detailed company-wise sales summary for comparing business performance across different manufacturers.
+
+### Visualization
+
+- **Chart Type:** Table
+
+### Columns
+
+- Company
+- YTD Average Price
+- YTD Cars Sold
+- YTD Total Sales
+- %GT YTD Total Sales
+
+---
+
+## Display Grand Total Percentage
+
+For **YTD Total Sales**:
+
+- Open **Value Field Settings**.
+- Select **Show Value As**.
+- Choose **Percentage of Grand Total**.
+
+This displays each company's contribution to the overall Year-to-Date sales.
+
+---
+
+## Display Units
+
+Apply the following display units for better readability:
+
+| Column | Display Unit |
+|---------|--------------|
+| YTD Avg Price | Thousands (K) |
+| YTD Total Sales | Millions (M) |
+
+---
+
+## Formatting
+
+- Apply professional color formatting.
+- Center-align values where appropriate.
+- Remove horizontal gridlines.
+- Customize background color.
+- Improve header styling and font formatting.
+
+---
+
+# 🎯 Dashboard Visuals Summary
+
+| Visualization | Purpose |
+|---------------|---------|
+| Area Chart | Weekly YTD Sales Trend |
+| Donut Chart | Sales Distribution by Body Style |
+| Stacked Column Chart | Sales Comparison by Vehicle Color |
+| Map | Regional Distribution of Cars Sold |
+| Table | Company-Wise Sales Performance |
+
+---
+
+# 💡 Key Learning Outcomes
+
+This visualization module demonstrates the implementation of:
+
+- Area Charts
+- Donut Charts
+- Stacked Column Charts
+- Map Visuals
+- Table Visuals
+- Visual-Level Filters
+- Dynamic Data Labels
+- DAX-Based Highlighting
+- Conditional Formatting
+- Data Label Customization
+- Percentage of Grand Total
+- Display Units (K & M)
+- Professional Dashboard Formatting
+- Interactive Business Reporting
+
+---
+
