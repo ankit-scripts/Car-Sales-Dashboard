@@ -853,3 +853,211 @@ Apply consistent formatting across all slicers to maintain a professional dashbo
 - Position slicers vertically for easy navigation and filtering.
 
 ---
+
+# 📄 Dashboard 2: Car Sales Dashboard - Details
+
+## 📌 Objective
+
+The **Car Sales Dashboard - Details** page provides a detailed, transaction-level view of all vehicle sales. It enables users to drill down into individual sales records, analyze specific transactions, and gain deeper insights beyond the summary dashboard.
+
+Unlike the main dashboard, which focuses on KPIs and visualizations, this page presents comprehensive sales information in a structured grid format for detailed analysis and reporting.
+
+---
+
+# 📋 Detailed Sales Grid
+
+## Objective
+
+Create a **Matrix** visual that displays all relevant information for each vehicle sale in a tabular format, allowing users to easily explore and compare individual sales records.
+
+### Visualization
+
+- **Visual Type:** Matrix
+
+### Fields Used
+
+| Column | Description |
+|---------|-------------|
+| Car Model | Vehicle model name |
+| Body Style | Vehicle body type |
+| Color | Vehicle color |
+| Sales Amount | Total sales amount |
+| Dealer Region | Sales region |
+| Dealer Name | Dealer responsible for the sale |
+| Engine | Engine type |
+| Transmission | Transmission type |
+| Sale Date | Date of vehicle sale |
+
+---
+
+# 📊 Data Bars
+
+To enhance data readability and quickly identify high-performing sales values, apply **Data Bars** to the **Total Sales** column.
+
+### Configuration
+
+- Select the **Matrix** visual.
+- Navigate to **Conditional Formatting**.
+- Choose **Data Bars**.
+- Apply Data Bars to the **Total Sales** field.
+- Customize the bar appearance for better visibility.
+
+Data Bars provide an intuitive visual representation of sales values, making it easier to compare records at a glance.
+
+---
+
+# 🎨 Formatting
+
+Apply professional formatting to improve the overall appearance and readability of the Matrix visual.
+
+- Apply a consistent color theme.
+- Align text and numeric values appropriately.
+- Remove gridlines for a cleaner design.
+- Customize the background color.
+- Format column headers with clear typography.
+- Adjust column widths for better readability.
+- Apply appropriate display units where required.
+
+---
+
+# 🎯 Dashboard Summary
+
+| Dashboard | Purpose |
+|------------|---------|
+| Car Sales Dashboard | KPI Overview and Interactive Visualizations |
+| Car Sales Dashboard - Details | Transaction-level sales analysis using a Matrix visual |
+
+---
+
+## 💡 Key Learning Outcomes
+
+This dashboard demonstrates the implementation of:
+
+- Matrix Visual
+- Detailed Sales Reporting
+- Transaction-Level Analysis
+- Conditional Formatting
+- Data Bars
+- Professional Visual Formatting
+- Interactive Business Reporting
+- Dashboard Navigation
+
+---
+
+# 🧭 Dashboard Navigation & Interactive Filters
+
+## 📌 Objective
+
+To enhance user experience and improve report navigation, interactive **Navigation Buttons** and **Dropdown Slicers** have been added to the dashboard. These features allow users to seamlessly switch between report pages and dynamically filter data based on their business requirements.
+
+---
+
+# 🔄 Navigation Buttons
+
+Navigation buttons provide quick access between different report pages, creating a smooth and user-friendly experience.
+
+### Navigation Pages
+
+- 🏠 **Overview** – Displays KPIs and interactive visualizations.
+- 📄 **Details** – Displays transaction-level sales data in a Matrix visual.
+
+### Configuration
+
+1. Go to **Insert → Buttons → Navigator → Page Navigator**.
+2. Position the buttons on the left-side navigation panel.
+3. Rename the buttons as:
+   - **Overview**
+   - **Details**
+4. Customize the button states (**Default**, **Hover**, and **Selected**) for better user interaction.
+
+---
+
+# 🎛️ Interactive Filters (Dropdown Slicers)
+
+To allow users to analyze sales data from different perspectives, four interactive dropdown slicers have been added to the dashboard.
+
+### Slicers Used
+
+| Slicer | Purpose |
+|---------|---------|
+| 🚗 Body Style | Filter sales by vehicle body style |
+| 🏪 Dealer Name | Filter sales by dealer |
+| ⚙️ Transmission | Filter by transmission type |
+| 🔧 Engine | Filter by engine type |
+
+---
+
+## Configure Dropdown Slicers
+
+For each slicer:
+
+1. Insert a **Slicer** visual.
+2. Drag the required field into the slicer.
+3. Navigate to:
+
+   **Visual → Slicer Settings → Style → Dropdown**
+
+4. Convert the slicer from **List** to **Dropdown** to save dashboard space and improve usability.
+
+---
+
+## Formatting
+
+Apply consistent formatting across all navigation buttons and slicers to create a clean and professional dashboard.
+
+### Navigation Buttons
+
+- Apply a consistent color theme.
+- Highlight the active page using a different background color.
+- Center-align the button text.
+- Maintain equal button size and spacing.
+
+### Slicers
+
+- Apply a consistent color theme.
+- Center-align text where appropriate.
+- Customize the background color.
+- Format the title and border.
+- Maintain uniform sizing and spacing across all slicers.
+
+---
+
+## 🎯 Dashboard Interaction
+
+The navigation buttons and slicers work together to provide an interactive reporting experience.
+
+### Navigation
+
+- Switch between the **Overview** and **Details** dashboard pages.
+- Maintain a consistent navigation experience throughout the report.
+
+### Filters
+
+The slicers dynamically filter all report visuals, including:
+
+- KPI Cards
+- Area Chart
+- Donut Chart
+- Stacked Column Chart
+- Map Visual
+- Company-Wise Sales Table
+- Details Matrix
+
+This allows users to explore the data from multiple perspectives without changing the underlying dataset.
+
+---
+
+## 💡 Key Learning Outcomes
+
+This section demonstrates the implementation of:
+
+- Page Navigation
+- Page Navigator Buttons
+- Interactive Report Navigation
+- Dropdown Slicers
+- Cross-Filtering
+- Interactive Dashboard Design
+- User Experience (UX) Design
+- Professional Dashboard Formatting
+
+---
