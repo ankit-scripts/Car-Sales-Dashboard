@@ -1,5 +1,115 @@
-# Car-Sales-Dashboard
+# CAR SALES DASHBOARD
 
+📌 Project Overview:
+---
+- A comprehensive **Power BI Business Intelligence Dashboard** built to analyze vehicle sales performance through interactive visualizations, dynamic KPIs, and advanced DAX calculations. This project demonstrates the complete Power BI development workflow—from data transformation and modeling to creating insightful dashboards that support data-driven business decisions.
+
+- The dashboard is designed to help stakeholders monitor sales performance, compare historical trends, evaluate pricing strategies, and identify growth opportunities using real-time business metrics.
+
+---
+
+## Dashboard Pages
+
+The report consists of **two interactive dashboard pages**:
+
+### 1. CAR SALES DASHBOARD | OVERVIEW
+
+The **Overview** page presents a high-level summary of sales performance through dynamic KPI cards and interactive visualizations. It enables users to quickly understand business performance, identify trends, and compare sales across different dimensions.
+
+**Features:**
+
+- Dynamic KPI Cards
+- Sales Trend Analysis
+- Body Style Analysis
+- Color-wise Sales Analysis
+- Regional Sales Map
+- Company-wise Performance Table
+- Interactive Filters
+- Page Navigation
+
+---
+
+### 2. CAR SALES DASHBOARD | DETAILS
+
+The **Details** page provides a transaction-level view of the sales data using a Matrix visual. It allows users to drill down into individual sales records and perform detailed business analysis.
+
+**Features:**
+
+- Detailed Sales Matrix
+- Transaction-Level Analysis
+- Data Bars for Total Sales
+- Interactive Filtering
+- Professional Tabular Reporting
+
+---
+
+## Project Focus — What This Analysis Solves
+
+This dashboard is designed to answer key business questions and support strategic decision-making.
+
+- 📈 Monitor Year-to-Date (YTD) sales performance and compare it with previous year results.
+- 💰 Analyze average vehicle selling prices to identify pricing trends and business growth.
+- 🚗 Track the total number of vehicles sold across different periods.
+- 🌍 Evaluate sales performance across dealer regions, body styles, vehicle colors, and manufacturers.
+- 📊 Enable interactive analysis through filters, drill-down capabilities, and transaction-level reporting.
+
+---
+
+# 📚 Key Terms to Know Before Diving Into the Dashboard
+
+Understanding the following business and Power BI concepts will help you interpret the dashboard more effectively.
+
+| Term | Description |
+|------|-------------|
+| **YTD (Year-to-Date)** | Total value accumulated from the beginning of the current year up to the selected date. |
+| **MTD (Month-to-Date)** | Total value accumulated from the beginning of the current month up to the selected date. |
+| **PYTD (Previous Year-to-Date)** | Total value for the same period in the previous year. |
+| **YoY Growth (Year-over-Year)** | Percentage increase or decrease compared to the previous year's performance. |
+| **Time Intelligence** | DAX functions used to analyze data across different time periods. |
+| **Calendar Table** | A dedicated date table used for accurate Time Intelligence calculations. |
+| **KPI (Key Performance Indicator)** | Business metrics used to measure organizational performance. |
+| **Data Modeling** | Creating relationships between tables to enable accurate reporting and analysis. |
+| **DAX (Data Analysis Expressions)** | Formula language used in Power BI for creating measures and calculated columns. |
+| **Conditional Formatting** | Dynamically changes colors or formatting based on data values to improve visualization. |
+
+---
+
+# 💡 How Does This Dashboard Provide Valuable Insights?
+
+The dashboard transforms raw sales data into meaningful business intelligence by combining interactive visuals with advanced DAX calculations.
+
+### Business Insights Delivered
+
+- Identify overall sales performance using dynamic KPI cards.
+- Compare current sales with previous year performance using Time Intelligence.
+- Discover top-performing vehicle body styles and colors.
+- Analyze regional sales distribution through interactive maps.
+- Evaluate company-wise sales contribution and market performance.
+- Monitor average selling price trends over time.
+- Identify peak sales weeks using trend analysis.
+- Perform detailed transaction-level analysis for individual sales records.
+- Filter data dynamically using interactive slicers.
+- Enable faster, data-driven business decisions through a single interactive report.
+
+---
+
+# 🗂️ Data Model View
+
+The dashboard follows a **Star Schema** data model to ensure efficient reporting and accurate DAX calculations.
+
+**Data Model Highlights**
+
+- Dedicated **Calendar Table** for Time Intelligence calculations.
+- One-to-Many relationship between the Calendar Table and the Car Sales table.
+- Optimized data model for improved report performance.
+- Clean and structured relationships to support dynamic filtering and calculations.
+
+> **📷 Data Model Screenshot**
+>
+> <img width="1683" height="1245" alt="image" src="https://github.com/user-attachments/assets/d85693d7-e2ad-46cb-b5a9-ba65c583c4e5" />
+
+
+---
 # Step 1: Data Transformation & Cleaning (Power Query)
 
 The first step in this project is to import the dataset into **Power Query** and perform data quality checks to ensure the data is accurate and analysis-ready.
