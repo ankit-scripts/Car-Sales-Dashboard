@@ -110,7 +110,9 @@ The dashboard follows a **Star Schema** data model to ensure efficient reporting
 
 
 ---
-# Step 1: Data Transformation & Cleaning (Power Query)
+
+
+## Data Transformation & Cleaning (Power Query)
 
 The first step in this project is to import the dataset into **Power Query** and perform data quality checks to ensure the data is accurate and analysis-ready.
 
@@ -141,9 +143,12 @@ To improve data consistency and eliminate unwanted values:
 - Data Cleaning
 - Data Validation
 
-  # 📊 KPI 1: Sales Overview Dashboard
+---
+## Dashboard 1: Car Sales Dashboard | Overview
 
-## 📌 Problem Statement
+### KPI 1
+
+### 📌 Problem Statement
 
 The objective of this KPI is to provide **real-time insights into sales performance** by tracking key business metrics. These KPIs help stakeholders monitor sales trends, compare current performance with previous periods, and make data-driven business decisions.
 
@@ -962,9 +967,9 @@ Apply consistent formatting across all slicers to maintain a professional dashbo
 - Ensure all slicers have a uniform size and spacing.
 - Position slicers vertically for easy navigation and filtering.
 
----
+---------------------
 
-# 📄 Dashboard 2: Car Sales Dashboard - Details
+## Dashboard 2: Car Sales Dashboard - Details
 
 ## 📌 Objective
 
