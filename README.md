@@ -140,21 +140,23 @@ CALENDAR(
 
 ### Calendar Table Columns
 
-**Year**
+◆ **Year**
 
 ```DAX
 Year =
 YEAR('Calendar Table'[Date])
 ```
+<br> 
 
-**Week**
+◆ **Week**
 
 ```DAX
 Week =
 WEEKNUM('Calendar Table'[Date])
 ```
+<br>
 
-**Month**
+◆ **Month**
 
 ```DAX
 Month =
@@ -165,7 +167,7 @@ The Calendar Table is then connected to the `car_data` table using a **1:* relat
 
 ---
 
-**YTD Total Sales**
+◆ **YTD Total Sales**
 
 ```DAX
 YTD Total Sales =
@@ -174,10 +176,9 @@ TOTALYTD(
     'Calendar Table'[Date]
 )
 ```
+<br>
 
----
-
-**MTD Total Sales**
+◆ **MTD Total Sales**
 
 ```DAX
 MTD Total Sales =
@@ -186,8 +187,9 @@ TOTALMTD(
     'Calendar Table'[Date]
 )
 ```
+<br>
 
-**MTD KPI**
+◆ **MTD KPI**
 
 ```DAX
 MTD KPI =
@@ -196,10 +198,9 @@ CONCATENATE(
     FORMAT([MTD Total Sales] / 1000000, "$0.00M")
 )
 ```
+<br>
 
----
-
-**PYTD Total Sales**
+◆ **PYTD Total Sales**
 
 PYTD is required before calculating the YoY growth and sales difference.
 
@@ -210,20 +211,18 @@ CALCULATE(
     SAMEPERIODLASTYEAR('Calendar Table'[Date])
 )
 ```
+<br>
 
----
-
-**Sales Difference**
+◆ **Sales Difference**
 
 ```DAX
 Sales Difference =
 [YTD Total Sales] -
 [PYTD Total Sales]
 ```
+<br>
 
----
-
-**YoY Sales Growth**
+◆ **YoY Sales Growth**
 
 ```DAX
 YoY Sales Growth =
@@ -233,11 +232,12 @@ YoY Sales Growth =
 
 Format the measure as **Percentage (%)**.
 
----
+<br>
 
-**Sales Difference Colour**
 
-This measure is used for conditional formatting of the KPI.
+◆ **Sales Difference Colour**
+
+This measure is used in **Callout Value → Conditional Formatting** to dynamically change the KPI color based on performance.
 
 ```DAX
 Sales Diff Colour =
@@ -250,14 +250,14 @@ IF(
 
 The result is used in the KPI card's conditional formatting:
 
-- Green → Positive difference
-- Red → Negative difference
+- 🟢 Green → Positive Growth
+- 🔴 Red → Negative Growth
 
 ---
 
 ## KPI 2: Average Price Analysis
 
-### Requirement
+**Requirement**
 
 The Average Price section tracks:
 
@@ -268,7 +268,7 @@ The Average Price section tracks:
 
 ---
 
-## Average Price
+◆ **Average Price**
 
 The base Average Price measure is created first.
 
@@ -280,7 +280,7 @@ COUNT(car_data[Car_id])
 
 ---
 
-## YTD Average Price
+◆ **YTD Average Price**
 
 ```DAX
 YTD Avg Price =
@@ -292,7 +292,7 @@ TOTALYTD(
 
 ---
 
-## PYTD Average Price
+◆ **PYTD Average Price**
 
 ```DAX
 PYTD Avg Price =
@@ -304,7 +304,7 @@ CALCULATE(
 
 ---
 
-## Average Price Difference
+◆ **Average Price Difference**
 
 ```DAX
 Avg Price Diff =
@@ -314,7 +314,7 @@ Avg Price Diff =
 
 ---
 
-## Average Price Colour
+◆ **Average Price Colour**
 
 ```DAX
 Avg Price Colour =
@@ -329,7 +329,7 @@ This measure is used for conditional formatting of the Average Price KPI.
 
 ---
 
-## YoY Average Price Growth
+◆ **YoY Average Price Growth**
 
 ```DAX
 YoY Avg Price Growth =
@@ -341,7 +341,7 @@ Format the measure as **Percentage (%)**.
 
 ---
 
-## MTD Average Price
+◆ **MTD Average Price**
 
 ```DAX
 MTD Avg Price =
@@ -351,7 +351,7 @@ TOTALMTD(
 )
 ```
 
-### MTD Average Price KPI
+◆ **MTD Average Price KPI**
 
 ```DAX
 MTD Avg Price KPI =
