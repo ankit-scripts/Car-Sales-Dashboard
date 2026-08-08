@@ -140,21 +140,21 @@ CALENDAR(
 
 ### Calendar Table Columns
 
-#### Year
+**Year**
 
 ```DAX
 Year =
 YEAR('Calendar Table'[Date])
 ```
 
-#### Week
+**Week**
 
 ```DAX
 Week =
 WEEKNUM('Calendar Table'[Date])
 ```
 
-#### Month
+**Month**
 
 ```DAX
 Month =
@@ -165,7 +165,7 @@ The Calendar Table is then connected to the `car_data` table using a **1:* relat
 
 ---
 
-## YTD Total Sales
+**YTD Total Sales**
 
 ```DAX
 YTD Total Sales =
@@ -177,7 +177,7 @@ TOTALYTD(
 
 ---
 
-## MTD Total Sales
+**MTD Total Sales**
 
 ```DAX
 MTD Total Sales =
@@ -187,7 +187,7 @@ TOTALMTD(
 )
 ```
 
-### MTD KPI
+**MTD KPI**
 
 ```DAX
 MTD KPI =
@@ -199,7 +199,7 @@ CONCATENATE(
 
 ---
 
-## PYTD Total Sales
+**PYTD Total Sales**
 
 PYTD is required before calculating the YoY growth and sales difference.
 
@@ -213,7 +213,7 @@ CALCULATE(
 
 ---
 
-## Sales Difference
+**Sales Difference**
 
 ```DAX
 Sales Difference =
@@ -223,7 +223,7 @@ Sales Difference =
 
 ---
 
-## YoY Sales Growth
+**YoY Sales Growth**
 
 ```DAX
 YoY Sales Growth =
@@ -235,7 +235,7 @@ Format the measure as **Percentage (%)**.
 
 ---
 
-## Sales Difference Colour
+**Sales Difference Colour**
 
 This measure is used for conditional formatting of the KPI.
 
@@ -255,7 +255,7 @@ The result is used in the KPI card's conditional formatting:
 
 ---
 
-# KPI 2: Average Price Analysis
+## KPI 2: Average Price Analysis
 
 ### Requirement
 
