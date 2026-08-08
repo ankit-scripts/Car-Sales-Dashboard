@@ -1,15 +1,22 @@
 # CAR SALES DASHBOARD
 
-A Power BI dashboard built to analyze car sales performance using DAX, Power Query, data modeling, and interactive visualizations.
+## 📌 Project Overview:
 
-The project contains two dashboard pages:
+- A comprehensive **Power BI Business Intelligence Dashboard** built to analyze vehicle sales performance through interactive visualizations, dynamic KPIs, and advanced DAX calculations. This project demonstrates the complete Power BI development workflow from data transformation and modeling to creating insightful dashboards that support data-driven business decisions.
 
-1. **CAR SALES DASHBOARD | OVERVIEW**
-2. **CAR SALES DASHBOARD | DETAILS**
+- The dashboard is designed to help stakeholders monitor sales performance, compare historical trends, evaluate pricing strategies, and identify growth opportunities using real-time business metrics.
+
+<br>
+
+**The project contains two dashboard pages:**
+
+  1️⃣ **Car Sales Dashboard | Overview**
+
+  2️⃣ **Car Sales Dashboard | Details**
 
 ---
 
-## Project Focus — What This Analysis Solves
+## 🔷 Project Focus - What This Analysis Solves
 
 The dashboard focuses on five main areas:
 
@@ -21,7 +28,7 @@ The dashboard focuses on five main areas:
 
 ---
 
-## Key Terms to Know Before Diving Into the Dashboard
+## 🔷 Key Terms to Know Before Diving Into the Dashboard
 
 | Term | Meaning |
 |------|---------|
@@ -37,7 +44,7 @@ The dashboard focuses on five main areas:
 
 ---
 
-## How Does This Dashboard Provide Valuable Insights?
+## 🔷 How Does This Dashboard Provide Valuable Insights?
 
 The dashboard converts raw car sales data into a set of interactive reports that can be used to:
 
@@ -53,7 +60,7 @@ The dashboard converts raw car sales data into a set of interactive reports that
 
 ---
 
-## Data Model View
+## 🔷 Data Model View
 
 A dedicated **Calendar Table** is used for Time Intelligence calculations. The Calendar Table is connected to the main `car_data` table using a **one-to-many (1:*) relationship**.
 
@@ -63,53 +70,37 @@ A dedicated **Calendar Table** is used for Time Intelligence calculations. The C
 - **car_data** → Many side (`*`)
 - Relationship is created using the **Date** column.
 
-The Calendar Table is used for calculations such as:
-
-- YTD
-- MTD
-- PYTD
-- YoY Growth
-- Weekly Sales Trend
-
-### Data Model Screenshot
+<br>
 
 <img width="1673" height="1246" alt="image" src="https://github.com/user-attachments/assets/ab419759-ef93-4a33-9a42-1e823b4259da" />
 
 
 ---
 
-# Data Transformation & Cleaning (Power Query)
+## 🔷 Data Transformation & Cleaning (Power Query)
 
-The first step of the project is to transform and clean the raw data using **Power Query**.
+The first step of the project is to **transform and clean the raw data using Power Query**.
 
-### Data Quality Check
+### 1️⃣ Data Quality Check
+- **Valid Values:** Verified that the data contains valid and correctly formatted values.
+- **Error Values:** Identified and reviewed any errors present in the data.
+- **Empty Values:** Checked for blank or missing values that may affect the analysis.
 
-After loading the data into Power Query, the quality of each column is checked for:
+> **Important:** The **Date** column must contain **100% valid values** because it is used for Time Intelligence calculations.
 
-- Valid values
-- Error values
-- Empty values
-
-The **Date** column is especially important because it is used for Time Intelligence calculations.
-
-> **Important:** The Date column should always contain **100% valid values**.
-
-### Data Cleaning
-
-The following cleaning steps were performed:
-
-- Checked data quality for all columns.
-- Identified errors and empty values.
-- Used **Replace Values** to correct inconsistent or incorrect values.
-- Prepared the data for data modeling and DAX calculations.
-
+### 2️⃣ Data Cleaning
+- Identified and reviewed **errors and empty values**.
+- Used **Replace Values** to correct inconsistent or incorrect data.
+- Ensured the dataset was clean and consistent.
+- Prepared the cleaned data for **Data Modeling and DAX calculations**.
+  
 ---
 
-# Dashboard 1: CAR SALES DASHBOARD | OVERVIEW
+# 📊 Dashboard 1: Car Sales Dashboard | Overview
 
 The Overview page provides the main summary of the car sales analysis. It contains three major KPI sections followed by interactive charts and a company-wise sales table.
 
----
+<br>
 
 ## KPI 1: Sales Overview
 
@@ -122,11 +113,11 @@ The Sales Overview section tracks:
 - YoY Growth in Total Sales
 - Difference between YTD Sales and PYTD Sales
 
----
+<br>
 
-## Calendar Table
+### Step 1: Creating a Dynamic Calendar Table
 
-Since the dashboard uses Time Intelligence functions, a separate Calendar Table is created.
+The sales dataset may contain missing dates, which can lead to inaccurate Time Intelligence calculations. Creating a dedicated Calendar Table ensures continuous dates and enables functions like **YTD**, **MTD**, **PYTD**, and **YoY** to work correctly.
 
 Go to **Modeling → New Table**:
 
@@ -138,7 +129,7 @@ CALENDAR(
 )
 ```
 
-### Calendar Table Columns
+### Step 2: Create Date Attributes
 
 ◆ **Year**
 
@@ -165,7 +156,24 @@ FORMAT('Calendar Table'[Date], "MMMM")
 
 The Calendar Table is then connected to the `car_data` table using a **1:* relationship**.
 
----
+<br>
+
+### Step 3: Data Modeling
+
+Create a relationship between the Calendar Table and the Sales Table.
+
+**Relationship**
+
+| From | To | Relationship |
+|-------|----|--------------|
+| Calendar Table | Car Data | **One-to-Many (1:*)** |
+
+- **1** → Calendar Table
+- **\*** → Car Data (Fact Table)
+
+This relationship enables all Time Intelligence functions to calculate correctly.
+
+### Step 4: Create KPI Measures
 
 ◆ **YTD Total Sales**
 
@@ -266,7 +274,8 @@ The Average Price section tracks:
 - YoY Growth in Average Price
 - Difference between YTD Average Price and PYTD Average Price
 
----
+<br>
+<br>
 
 ◆ **Average Price**
 
@@ -278,7 +287,7 @@ SUM(car_data[Price ($)]) /
 COUNT(car_data[Car_id])
 ```
 
----
+<br>
 
 ◆ **YTD Average Price**
 
@@ -290,7 +299,7 @@ TOTALYTD(
 )
 ```
 
----
+<br>
 
 ◆ **PYTD Average Price**
 
@@ -302,7 +311,7 @@ CALCULATE(
 )
 ```
 
----
+<br>
 
 ◆ **Average Price Difference**
 
@@ -312,7 +321,7 @@ Avg Price Diff =
 [PYTD Avg Price]
 ```
 
----
+<br>
 
 ◆ **Average Price Colour**
 
@@ -327,7 +336,7 @@ IF(
 
 This measure is used for conditional formatting of the Average Price KPI.
 
----
+<br>
 
 ◆ **YoY Average Price Growth**
 
@@ -339,7 +348,7 @@ YoY Avg Price Growth =
 
 Format the measure as **Percentage (%)**.
 
----
+<br>
 
 ◆ **MTD Average Price**
 
@@ -350,6 +359,8 @@ TOTALMTD(
     'Calendar Table'[Date]
 )
 ```
+
+<br>
 
 ◆ **MTD Average Price KPI**
 
@@ -363,9 +374,9 @@ CONCATENATE(
 
 ---
 
-# KPI 3: Cars Sold Metrics
+## KPI 3: Cars Sold Metrics
 
-### Requirement
+**Requirement**
 
 The Cars Sold section tracks:
 
@@ -374,9 +385,9 @@ The Cars Sold section tracks:
 - YoY Growth in Cars Sold
 - Difference between YTD Cars Sold and PYTD Cars Sold
 
----
+<br>
 
-## YTD Cars Sold
+**YTD Cars Sold**
 
 ```DAX
 YTD Cars Sold =
@@ -386,9 +397,9 @@ TOTALYTD(
 )
 ```
 
----
+<br>
 
-## PYTD Cars Sold
+**PYTD Cars Sold**
 
 ```DAX
 PYTD Cars Sold =
@@ -398,9 +409,9 @@ CALCULATE(
 )
 ```
 
----
+<br>
 
-## Cars Sold Difference
+**Cars Sold Difference**
 
 ```DAX
 Cars Sold Diff =
@@ -408,9 +419,9 @@ Cars Sold Diff =
 [PYTD Cars Sold]
 ```
 
----
+<br>
 
-## Cars Sold Colour
+**Cars Sold Colour**
 
 ```DAX
 Cars Sold Colour =
@@ -423,9 +434,9 @@ IF(
 
 The measure is used for conditional formatting of the Cars Sold KPI.
 
----
+<br>
 
-## YoY Cars Sold Growth
+**YoY Cars Sold Growth**
 
 ```DAX
 YoY Cars Sold Growth =
@@ -435,9 +446,9 @@ YoY Cars Sold Growth =
 
 Format the measure as **Percentage (%)**.
 
----
+<br>
 
-## MTD Cars Sold
+**MTD Cars Sold**
 
 ```DAX
 MTD Cars Sold =
@@ -447,7 +458,9 @@ TOTALMTD(
 )
 ```
 
-### MTD Cars Sold KPI
+<br>
+
+**MTD Cars Sold KPI**
 
 ```DAX
 MTD Cars Sold KPI =
@@ -459,35 +472,31 @@ CONCATENATE(
 
 ---
 
-# Charts and Visualizations
+## Charts and Visualizations
 
-## 1. YTD Sales Weekly Trend
+### 1. YTD Sales Weekly Trend
 
-### Chart Type
+### Chart Type: Area Chart
 
-**Area Chart**
-
-### Fields
+**Fields**
 
 - **X-Axis:** Week
 - **Y-Axis:** Total Sales
 
 A Year filter is applied using **Basic Filtering**, with **2023** selected for the analysis.
-
 The X-Axis range is set to **54**, as the number of weeks in a year does not exceed 54.
 
----
+<br>
 
-## Total Sales
+**Total Sales**
 
 ```DAX
 Total Sales =
 SUM(car_data[Price ($)])
 ```
+<br>
 
----
-
-## Maximum Sales Point
+**Maximum Sales Point**
 
 The following measure identifies the maximum weekly sales value.
 
@@ -508,8 +517,9 @@ IF(
 
 The `Max Point` measure is added to the data labels to highlight the highest sales point on the chart.
 
-### Formatting
+<br>
 
+**Formatting**
 - Removed gridlines.
 - Applied dashboard color formatting.
 - Adjusted the X-Axis range.
@@ -517,20 +527,18 @@ The `Max Point` measure is added to the data labels to highlight the highest sal
 
 ---
 
-# 2. YTD Total Sales by Body Style
+## 2. YTD Total Sales by Body Style
 
-### Chart Type
+### Chart Type: Donut Chart
 
-**Donut Chart**
-
-### Fields
+**Fields**
 
 - **Legend:** Body Style
 - **Values:** YTD Total Sales
 
 The chart shows the contribution of different vehicle body styles to total YTD sales.
 
-### Formatting
+**Formatting**
 
 - Applied consistent colors.
 - Adjusted labels and legend.
@@ -538,13 +546,11 @@ The chart shows the contribution of different vehicle body styles to total YTD s
 
 ---
 
-# 3. YTD Total Sales by Color
+## 3. YTD Total Sales by Color
 
-### Chart Type
+### Chart Type: Stacked Column Chart
 
-**Stacked Column Chart**
-
-### Fields
+**Fields**
 
 - **X-Axis:** Color
 - **Values:** YTD Total Sales
@@ -560,13 +566,11 @@ The chart compares YTD sales across different vehicle colors.
 
 ---
 
-# 4. YTD Cars Sold by Dealer Region
+## 4. YTD Cars Sold by Dealer Region
 
-### Chart Type
+### Chart Type: Map**
 
-**Map**
-
-### Fields
+**Fields**
 
 - **Legend:** Dealer Region
 - **Bubble Size:** YTD Cars Sold
@@ -581,13 +585,11 @@ The map provides a geographical view of cars sold across different dealer region
 
 ---
 
-# 5. Company-Wise Sales Trend
+## 5. Company-Wise Sales Trend
 
-### Chart Type
+### Chart Type: Table**
 
-**Table**
-
-### Columns
+**Columns**
 
 - Company
 - YTD Avg Price
@@ -616,7 +618,7 @@ YTD Total Sales is displayed as a percentage of the grand total to show each com
 
 ---
 
-# Dashboard 2: CAR SALES DASHBOARD | DETAILS
+# 📊 Dashboard 2: Car Sales Dashboard | Details
 
 The Details page provides a transaction-level view of the car sales data.
 
