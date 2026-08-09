@@ -10,9 +10,9 @@
 
 ### The project contains two dashboard pages:
 
-⚫ **Car Sales Dashboard | Overview**
+🔷 **Car Sales Dashboard | Overview**
 
-⚪ **Car Sales Dashboard | Details**
+🔶 **Car Sales Dashboard | Details**
 
 ---
 
