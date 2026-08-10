@@ -126,15 +126,19 @@ The first step of the project is to **transform and clean the raw data using Pow
 The Overview page provides the main summary of the car sales analysis. It contains three major KPI sections followed by interactive charts and a company-wise sales table.
 
 ## KPI 1️⃣ Sales Overview
-
-### Requirement
+<p>
+<img width="400" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/3e68de88-2507-4245-9eb6-d5ad2bf8bb44" />
+<p>
+  
+**Requirement**
 
 The Sales Overview section tracks:
 
-- YTD Total Sales
-- MTD Total Sales
-- YoY Growth in Total Sales
-- Difference between YTD Sales and PYTD Sales
+- YTD Average Price
+- MTD Average Price
+- YOY Growth in Average Price
+- Difference between YTD Average Price and PTYD Average Price
+
 
 ---
 
@@ -291,6 +295,9 @@ The result is used in the KPI card's conditional formatting:
 ---
 
 ## KPI 2️⃣ Average Price Analysis
+<p>
+<img width="400" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/0f5ff8bf-474a-4e33-a664-4f2cea988565" />
+<p>
 
 **Requirement**
 
@@ -402,7 +409,10 @@ CONCATENATE(
 ---
 
 ## KPI 3️⃣ Cars Sold Metrics
-
+<p>
+<img width="400" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/442723d8-4aa4-4489-b6b7-7472045eac62" />
+<p>
+  
 **Requirement**
 
 The Cars Sold section tracks:
@@ -504,7 +514,10 @@ CONCATENATE(
 ### 1️⃣ YTD Sales Weekly Trend
 
 **Chart Type: Area Chart**
-
+<p>
+  <img width="500" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/c9bdbdda-c4c3-4252-8911-80995d9e4492" />
+<p>
+  
 **Fields**
 
 - **X-Axis:** Week
@@ -556,7 +569,10 @@ The `Max Point` measure is added to the data labels to highlight the highest sal
 ---
 
 ### 2️⃣ YTD Total Sales by Body Style
-
+<p>
+  <img width="300" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/1ee52791-8a56-447d-bf1a-b979c251b52c" />
+<p>
+    
 **Chart Type: Donut Chart**
 
 **Fields**
@@ -575,7 +591,10 @@ The chart shows the contribution of different vehicle body styles to total YTD s
 ---
 
 ### 3️⃣ YTD Total Sales by Color
-
+<p>
+  <img width="400" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/7469ef3b-ade4-4339-9f1e-0598dd4afb81" />
+<p>
+  
 **Chart Type: Stacked Column Chart**
 
 **Fields**
@@ -598,6 +617,10 @@ The chart compares YTD sales across different vehicle colors.
 
 **Chart Type: Map**
 
+<p>
+  <img width="500" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/01165942-eb9f-4b55-99df-773fe00fc230" />
+<p>
+
 **Fields**
 
 - **Legend:** Dealer Region
@@ -617,6 +640,10 @@ The map provides a geographical view of cars sold across different dealer region
 
 **Chart Type: Table**
 
+<p>
+  <img width="600" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/72de8221-0bdc-4841-b5ed-ca8dc1c8ad83" />
+<p>
+  
 **Columns**
 
 - Company
@@ -652,12 +679,14 @@ YTD Total Sales is displayed as a percentage of the grand total to show each com
 
 - It is designed for users who want to move from the high-level KPIs and charts on the Overview page to individual sales records.
 
----
-
 ## 🔷 Detailed Sales Grid
 
 ### Chart Type: Matrix
 
+<p>
+  <img width="1000" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/a7536ea3-01bc-4877-b60e-49c5dffbb726" />
+<p>
+  
 **Information Included**: The Matrix visual contains relevant information for individual car sales, including:
 
 - Car Model
@@ -672,8 +701,6 @@ YTD Total Sales is displayed as a percentage of the grand total to show each com
 
 This provides a detailed view of the underlying sales transactions.
 
----
-
 ## 🔷 Data Bars for Total Sales
 
 Data Bars are applied to the **Total Sales** column to make it easier to compare sales values visually.
@@ -686,8 +713,6 @@ Data Bars are applied to the **Total Sales** column to make it easier to compare
 4. Apply Data Bars to the Total Sales field.
 
 Higher sales values are represented by longer data bars, making differences between transactions easier to identify.
-
----
 
 ## 🔷 Details Page Formatting
 
@@ -730,18 +755,6 @@ These filters allow users to narrow down the dashboard based on specific vehicle
 
 ---
 
-## Tools and Technologies
-
-- **Power BI Desktop**
-- **Power Query**
-- **DAX**
-- **Data Modeling**
-- **Excel**
-- **Time Intelligence**
-- **Interactive Visualizations**
-
----
-
 ## 📌 Key Learning Outcomes
 
 - Data cleaning and transformation using Power Query.
@@ -756,3 +769,18 @@ These filters allow users to narrow down the dashboard based on specific vehicle
 - Creating interactive slicers and page navigation.
 - Designing separate summary and transaction-level dashboard pages.
 - Turning raw sales data into an interactive business reporting solution.
+
+---
+
+#Dashboard View:
+
+### Overview:
+
+<img width="2715" height="1520" alt="image" src="https://github.com/user-attachments/assets/aef4cda9-8ba3-421b-8481-421af8a0283e" />
+
+---
+### Details View:
+
+<img width="2412" height="1346" alt="image" src="https://github.com/user-attachments/assets/cc1d55eb-96fd-4cf6-8dad-b124cd767ec0" />
+
+---
