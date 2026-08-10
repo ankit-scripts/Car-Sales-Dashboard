@@ -592,7 +592,7 @@ The chart shows the contribution of different vehicle body styles to total YTD s
 
 ### 3️⃣ YTD Total Sales by Color
 <p>
-  <img width="400" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/7469ef3b-ade4-4339-9f1e-0598dd4afb81" />
+  <img width="300" alt="Car Sales Dashboard Overview" src="https://github.com/user-attachments/assets/7469ef3b-ade4-4339-9f1e-0598dd4afb81" />
 <p>
   
 **Chart Type: Stacked Column Chart**
@@ -730,7 +730,7 @@ The Matrix visual was formatted to maintain consistency with the Overview page.
 
 To enhance user experience and improve report navigation, interactive **Navigation Buttons** and **Dropdown Slicers** have been added to the dashboard. These features allow users to seamlessly switch between report pages and dynamically filter data based on their business requirements.
 
-## 🔷 Navigation Buttons
+🔶 **Navigation Buttons**
 
 Two navigation buttons are provided:
 
@@ -742,7 +742,7 @@ The buttons allow users to move between the summary dashboard and the detailed s
 The navigation area is formatted with different states to make the active page clear.
 
 
-## 🔷 Dashboard Filters
+🔶 **Dashboard Filters**
 
 The dashboard contains four slicers:
 
