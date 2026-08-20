@@ -181,9 +181,6 @@ WEEKNUM('Calendar Table'[Date])
 Month =
 FORMAT('Calendar Table'[Date], "MMMM")
 ```
-
-The Calendar Table is then connected to the `car_data` table using a **1:* relationship**.
-
 ---
 
 ### Step 3 ➡️ Data Modeling
